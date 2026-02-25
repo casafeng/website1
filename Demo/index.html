@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIF Nails Milano | Manicure, Pedicure & Nail Art - Anche Last Minute</title>
+    <meta name="description" content="Unghie impeccabili e igiene assoluta a Milano. Manicure, semipermanente e pedicure. Accettiamo appuntamenti last-minute. Prenota su WhatsApp.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        milk: '#F9F7F5',
+                        nude: '#EFE6DE',
+                        espresso: '#2C2420',
+                        gold: '#C8AA86',
+                        softgray: '#F3F4F6'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-milk text-espresso font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-milk/90 backdrop-blur-md z-50 border-b border-nude/50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-serif text-3xl font-semibold tracking-wide">DIF <span class="text-gold">NAILS</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Home</a>
+                    <a href="#services" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Servizi</a>
+                    <a href="#gallery" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Gallery</a>
+                    <a href="#booking" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Prenota</a>
+                    <a href="#location" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Dove siamo</a>
+                    <button id="lang-switch" class="text-xs border border-espresso/20 px-3 py-1 rounded-full hover:bg-espresso hover:text-white transition-all">EN</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-espresso hover:text-gold focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-nude/50 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+                <a href="#home" class="block py-3 text-sm uppercase tracking-widest hover:text-gold">Home</a>
+                <a href="#services" class="block py-3 text-sm uppercase tracking-widest hover:text-gold">Servizi</a>
+                <a href="#gallery" class="block py-3 text-sm uppercase tracking-widest hover:text-gold">Gallery</a>
+                <a href="#booking" class="block py-3 text-sm uppercase tracking-widest hover:text-gold">Prenota</a>
+                <button id="lang-switch-mobile" class="mt-2 text-xs border border-espresso/20 px-6 py-2 rounded-full inline-block">Switch to English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left">
+            <div class="lg:w-1/2">
+                <div class="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6 fade-in-up">
+                    <span class="text-gold text-xs">★★★★★</span>
+                    <span class="text-xs uppercase tracking-wider text-gray-500">Milano Luxury Nail Salon</span>
+                </div>
+                <h1 class="font-serif text-5xl lg:text-7xl leading-tight mb-6 fade-in-up delay-100">
+                    <span data-key="hero_title">Unghie impeccabili,<br>effetto <span class="italic text-gold">luxury</span>.</span>
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 font-light fade-in-up delay-200">
+                    <span data-key="hero_subtitle">Igiene assoluta, tecnica perfetta e disponibilità anche last-minute. Il tuo momento di bellezza a Milano.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-in-up delay-300">
+                    <a href="https://wa.me/390000000000" class="btn-primary flex items-center justify-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span data-key="cta_whatsapp">Prenota su WhatsApp</span>
+                    </a>
+                    <a href="#services" class="btn-secondary flex items-center justify-center gap-2">
+                        <span data-key="cta_services">Vedi i Servizi</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="mt-12 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-gray-500 fade-in-up delay-400">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="text-gold w-4 h-4"></i>
+                        <span data-key="trust_clean">Pulitissimo & Igienizzato</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="text-gold w-4 h-4"></i>
+                        <span data-key="trust_fast">Veloci & Puntuali</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="heart" class="text-gold w-4 h-4"></i>
+                        <span data-key="trust_prices">Prezzi Onesti</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background/Hero Image Area -->
+        <div class="lg:absolute lg:top-0 lg:right-0 lg:w-1/2 lg:h-full mt-12 lg:mt-0 relative h-96 w-full lg:clip-path-slant">
+            <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?q=80&w=2070&auto=format&fit=crop" alt="Luxury Nails Milano" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-espresso/10"></div>
+        </div>
+    </section>
+
+    <!-- Social Proof Strip -->
+    <section class="bg-white py-12 border-y border-nude/30">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-4 scroll-reveal">
+                    <p class="font-serif italic text-lg text-gray-700 mb-2">"Mi hanno ricevuta all’ultimo momento… ottimo servizio… massima cordialità"</p>
+                    <p class="text-xs uppercase tracking-widest text-gold">— Giulia M.</p>
+                </div>
+                <div class="p-4 scroll-reveal border-t md:border-t-0 md:border-l border-nude/50">
+                    <p class="font-serif italic text-lg text-gray-700 mb-2">"Locale pulitissimo, manicure meticoloso. Finalmente delle professioniste."</p>
+                    <p class="text-xs uppercase tracking-widest text-gold">— Francesca R.</p>
+                </div>
+                <div class="p-4 scroll-reveal border-t md:border-t-0 md:border-l border-nude/50">
+                    <p class="font-serif italic text-lg text-gray-700 mb-2">"Velocissime e bravissime. Tantissimi colori e prezzi onesti per Milano."</p>
+                    <p class="text-xs uppercase tracking-widest text-gold">— Elena B.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-milk relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-serif text-4xl mb-4" data-key="services_title">I Nostri Trattamenti</h2>
+                <p class="text-gray-500 max-w-xl mx-auto" data-key="services_subtitle">Dalla manicure espressa ai trattamenti SPA. Utilizziamo solo prodotti certificati e sterilizzati.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="service-card group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl group-hover:text-gold transition-colors">Semipermanente Mani</h3>
+                        <i data-lucide="sparkles" class="text-nude group-hover:text-gold transition-colors"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6">Applicazione perfetta con rinforzo. Durata garantita 3 settimane. Rimozione delicata inclusa nel refill.</p>
+                    <div class="flex justify-between items-center border-t border-nude pt-4">
+                        <span class="text-xs text-gray-400 font-medium">da €35</span>
+                        <a href="#booking" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Prenota</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl group-hover:text-gold transition-colors">Manicure Classica / SPA</h3>
+                        <i data-lucide="hand" class="text-nude group-hover:text-gold transition-colors"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6">Pulizia cuticole russa (dry manicure), forma perfetta, scrub e massaggio idratante.</p>
+                    <div class="flex justify-between items-center border-t border-nude pt-4">
+                        <span class="text-xs text-gray-400 font-medium">da €20</span>
+                        <a href="#booking" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Prenota</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl group-hover:text-gold transition-colors">Pedicure Curativo & Estetico</h3>
+                        <i data-lucide="footprints" class="text-nude group-hover:text-gold transition-colors"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6">Trattamento callosità, unghie incarnite e relax totale. Piedi di velluto in 45 minuti.</p>
+                    <div class="flex justify-between items-center border-t border-nude pt-4">
+                        <span class="text-xs text-gray-400 font-medium">da €35</span>
+                        <a href="#booking" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Prenota</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl group-hover:text-gold transition-colors">Ricostruzione Gel</h3>
+                        <i data-lucide="layers" class="text-nude group-hover:text-gold transition-colors"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6">Allungamento con cartina o tip. Effetto naturale e super resistente. Ideale per onicofagia.</p>
+                    <div class="flex justify-between items-center border-t border-nude pt-4">
+                        <span class="text-xs text-gray-400 font-medium">Su richiesta</span>
+                        <a href="#booking" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Prenota</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card group border-gold/30 bg-white/80">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl text-gold">SOS Emergenze</h3>
+                        <i data-lucide="alert-circle" class="text-gold"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6">Unghia rotta? Semipermanente sbeccato? Riparazione express anche senza appuntamento (previa chiamata).</p>
+                    <div class="flex justify-between items-center border-t border-nude pt-4">
+                        <span class="text-xs text-gray-400 font-medium">Prezzo variabile</span>
+                        <a href="https://wa.me/390000000000" class="text-xs uppercase tracking-widest font-bold text-gold hover:text-espresso">Scrivici Ora</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card group flex flex-col justify-center items-center text-center bg-espresso text-white">
+                    <h3 class="font-serif text-2xl mb-2 text-gold">Listino Completo</h3>
+                    <p class="text-gray-300 text-sm mb-6">Vuoi conoscere tutti i prezzi nel dettaglio?</p>
+                    <a href="https://wa.me/390000000000?text=Ciao,%20vorrei%20vedere%20il%20listino%20prezzi" class="btn-primary bg-white text-espresso hover:bg-gold hover:text-white w-full">Richiedi su WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="font-serif text-4xl mb-6" data-key="why_title">Perché scegliere DIF Nails?</h2>
+                    <p class="text-gray-600 mb-8 font-light leading-relaxed" data-key="why_desc">
+                        Non siamo il solito salone. Crediamo che l'igiene sia la base del lusso e che la velocità non debba mai compromettere la qualità. Ogni strumento viene sterilizzato in autoclave medica.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-nude flex items-center justify-center flex-shrink-0 text-espresso">
+                                <i data-lucide="shield" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-medium">Igiene Encomiabile</h4>
+                                <p class="text-xs text-gray-500 mt-1">Strumenti imbustati e sterilizzati per ogni cliente.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-nude flex items-center justify-center flex-shrink-0 text-espresso">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-medium">Velocità Senza Compromessi</h4>
+                                <p class="text-xs text-gray-500 mt-1">Ottimizziamo i tempi per le donne impegnate di Milano.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-nude flex items-center justify-center flex-shrink-0 text-espresso">
+                                <i data-lucide="palette" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-medium">Ampia Scelta Colori</h4>
+                                <p class="text-xs text-gray-500 mt-1">Oltre 300 nuance tra classici e trend stagionali.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-nude flex items-center justify-center flex-shrink-0 text-espresso">
+                                <i data-lucide="smile" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-medium">Accoglienza Warm</h4>
+                                <p class="text-xs text-gray-500 mt-1">Professionali sì, ma col sorriso. Ti sentirai a casa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=2070&auto=format&fit=crop" alt="Clean Tools" class="rounded-2xl shadow-xl w-full h-[500px] object-cover">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg max-w-xs hidden md:block">
+                        <p class="font-serif italic text-lg text-gold">"L'unico posto a Milano dove mi fido ciecamente per l'igiene."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-milk">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-12">
+            <h2 class="font-serif text-4xl mb-4">Ispirazioni</h2>
+            <p class="text-gray-500 text-sm">Seguici su Instagram per i lavori giornalieri.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 px-4">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg hover:opacity-90 transition-opacity" alt="Nail Art 1">
+            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg hover:opacity-90 transition-opacity" alt="Nail Art 2">
+            <img src="https://images.unsplash.com/photo-1596918667537-b95655a6873a?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg hover:opacity-90 transition-opacity" alt="Nail Art 3">
+            <div class="relative w-full h-64 rounded-lg bg-espresso flex flex-col items-center justify-center text-white cursor-pointer hover:bg-gold transition-colors group">
+                <i data-lucide="instagram" class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"></i>
+                <span class="text-sm font-medium">Vedi altro su IG</span>
+                <a href="#" class="absolute inset-0"></a>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="https://wa.me/390000000000" class="btn-secondary inline-flex gap-2 items-center">
+                <i data-lucide="camera" class="w-4 h-4"></i>
+                Hai una foto ispirazione? Mandacela
+            </a>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-24 bg-white scroll-reveal">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-softgray rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                <!-- Left: Guide -->
+                <div class="lg:w-2/5 bg-espresso text-milk p-10 lg:p-14 flex flex-col justify-center">
+                    <h3 class="font-serif text-3xl mb-8" data-key="book_title">Prenota in 30 secondi</h3>
+                    <ul class="space-y-8 relative pl-6 border-l border-gold/30">
+                        <li class="relative">
+                            <span class="absolute -left-[31px] bg-gold text-espresso w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                            <h4 class="font-medium text-lg text-white">Scegli il trattamento</h4>
+                            <p class="text-gray-400 text-sm mt-1">Non sei sicura? Seleziona "Consulenza".</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[31px] bg-gold text-espresso w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                            <h4 class="font-medium text-lg text-white">Hai fretta?</h4>
+                            <p class="text-gray-400 text-sm mt-1">Per urgenze last-minute, meglio chiamare direttamente.</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[31px] bg-gold text-espresso w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                            <h4 class="font-medium text-lg text-white">Conferma</h4>
+                            <p class="text-gray-400 text-sm mt-1">Ti risponderemo su WhatsApp per confermare l'orario.</p>
+                        </li>
+                    </ul>
+                    <div class="mt-12 pt-8 border-t border-white/10">
+                        <p class="text-sm text-gray-400 mb-4">Preferisci parlare a voce?</p>
+                        <a href="tel:+390000000000" class="flex items-center gap-3 text-gold hover:text-white transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span class="text-lg font-serif">02 1234 5678</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:w-3/5 p-10 lg:p-14 bg-white">
+                    <form id="booking-form" class="space-y-6" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="booking-name" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Nome</label>
+                                <input id="booking-name" name="name" type="text" required minlength="2" class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all" placeholder="Il tuo nome">
+                            </div>
+                            <div>
+                                <label for="booking-phone" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Telefono (WhatsApp)</label>
+                                <input id="booking-phone" name="phone" type="tel" required class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all" placeholder="+39 ...">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="booking-email" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
+                            <input id="booking-email" name="email" type="email" required class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all" placeholder="nome@email.com">
+                        </div>
+
+                        <div>
+                            <label for="booking-service" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Servizio Desiderato</label>
+                            <select id="booking-service" name="service" required class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all text-gray-700">
+                                <option value="" disabled selected>Seleziona un servizio</option>
+                                <option value="Semipermanente Mani">Semipermanente Mani</option>
+                                <option value="Manicure Classica / SPA">Manicure Classica / SPA</option>
+                                <option value="Pedicure">Pedicure</option>
+                                <option value="Rimozione / Refill">Rimozione / Refill</option>
+                                <option value="Riparazione SOS">Riparazione SOS</option>
+                                <option value="Altro / Consulenza">Altro / Consulenza</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="booking-date" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Data</label>
+                                <input id="booking-date" name="date" type="date" required class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all">
+                            </div>
+                            <div>
+                                <label for="booking-hour-slot" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Fascia Oraria</label>
+                                <select id="booking-hour-slot" name="hourSlot" required class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all text-gray-700">
+                                    <option value="" disabled selected>Seleziona orario</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="booking-notes" class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Note (Opzionale)</label>
+                            <textarea id="booking-notes" name="notes" rows="2" class="w-full bg-softgray border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-gold focus:bg-white transition-all" placeholder="Es. Ho un'unghia rotta, allergie..."></textarea>
+                        </div>
+
+                        <div id="booking-feedback" class="hidden rounded-lg px-4 py-3 text-sm"></div>
+                        <div id="booking-alternatives" class="hidden">
+                            <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Orari alternativi disponibili</p>
+                            <div id="booking-alternative-list" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div id="booking-result" class="hidden rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-espresso"></div>
+
+                        <button id="booking-submit-btn" type="submit" class="w-full btn-primary py-4 text-center justify-center mt-4">
+                            Invia Richiesta
+                        </button>
+                        <a id="booking-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full btn-secondary py-4 text-center justify-center mt-3">Open WhatsApp</a>
+                        <p class="text-xs text-center text-gray-400 mt-4">I dati vengono salvati alla conferma; WhatsApp è opzionale.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & FAQ -->
+    <section id="location" class="py-20 bg-milk">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Map & Hours -->
+                <div>
+                    <h2 class="font-serif text-3xl mb-6">Vieni a trovarci</h2>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm mb-6">
+                        <div class="flex items-start gap-4 mb-4">
+                            <i data-lucide="map-pin" class="text-gold mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-espresso">DIF Nails Milano</h4>
+                                <p class="text-gray-600">Via Esempio 123, 20100 Milano (MI)</p>
+                                <p class="text-xs text-gray-400 mt-1">Vicino alla Metro M1/M2</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="clock" class="text-gold mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-espresso">Orari</h4>
+                                <table class="text-sm text-gray-600 w-full mt-1">
+                                    <tr><td class="pr-4 py-1">Lun - Ven</td><td>09:30 - 19:30</td></tr>
+                                    <tr><td class="pr-4 py-1">Sabato</td><td>09:00 - 18:00</td></tr>
+                                    <tr><td class="pr-4 py-1">Domenica</td><td>Chiuso</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Placeholder Map -->
+                    <div class="w-full h-64 bg-nude/50 rounded-2xl flex items-center justify-center text-gray-400">
+                        [Google Maps Placeholder]
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div>
+                    <h2 class="font-serif text-3xl mb-6">Domande Frequenti</h2>
+                    <div class="space-y-4">
+                        <details class="group bg-white rounded-xl shadow-sm">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+                                <span>Serve appuntamento?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </span>
+                            </summary>
+                            <div class="text-gray-600 px-4 pb-4 text-sm animate-slideDown">
+                                È sempre preferibile prenotare, ma spesso riusciamo ad accomodare anche le richieste last-minute. Chiamaci per verificare la disponibilità immediata.
+                            </div>
+                        </details>
+                        
+                        <details class="group bg-white rounded-xl shadow-sm">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+                                <span>Che standard di igiene adottate?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </span>
+                            </summary>
+                            <div class="text-gray-600 px-4 pb-4 text-sm animate-slideDown">
+                                L'igiene è la nostra priorità assoluta. Utilizziamo autoclave per sterilizzare gli strumenti metallici (imbustati singolarmente) e lime monouso per ogni cliente.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-xl shadow-sm">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+                                <span>Ho un'unghia rotta, potete aiutarmi oggi?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </span>
+                            </summary>
+                            <div class="text-gray-600 px-4 pb-4 text-sm animate-slideDown">
+                                Assolutamente sì! Il nostro servizio "SOS" è pensato proprio per questo. Scrivici su WhatsApp mandando una foto del danno e ti inseriremo appena possibile.
+                            </div>
+                        </details>
+
+                         <details class="group bg-white rounded-xl shadow-sm">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+                                <span>Quali sono i prezzi?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </span>
+                            </summary>
+                            <div class="text-gray-600 px-4 pb-4 text-sm animate-slideDown">
+                                Crediamo nella trasparenza. I prezzi partono da 20€ per la manicure classica. Per il listino completo e dettagliato, scrivici su WhatsApp.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-milk py-12 pb-32 md:pb-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-3xl mb-6">DIF Nails Milano</h2>
+            <p class="text-nude text-sm mb-8 font-light tracking-wide">Il tuo posto del cuore per le unghie a Milano.</p>
+            
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="hover:text-gold transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-gold transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-gold transition-colors"><i data-lucide="map" class="w-5 h-5"></i></a>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2024 DIF Nails. Tutti i diritti riservati.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Bar -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-nude/50 px-6 py-3 flex justify-between items-center z-50 md:hidden shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
+        <a href="https://wa.me/390000000000" class="flex flex-col items-center text-espresso hover:text-gold">
+            <i data-lucide="message-circle" class="w-5 h-5 mb-1"></i>
+            <span class="text-[10px] uppercase tracking-wide">WhatsApp</span>
+        </a>
+        <a href="#booking" class="bg-espresso text-white rounded-full px-8 py-3 font-medium text-sm shadow-lg transform -translate-y-6 border-4 border-white flex items-center gap-2">
+            Prenota
+        </a>
+        <a href="tel:+390000000000" class="flex flex-col items-center text-espresso hover:text-gold">
+            <i data-lucide="phone" class="w-5 h-5 mb-1"></i>
+            <span class="text-[10px] uppercase tracking-wide">Chiama</span>
+        </a>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

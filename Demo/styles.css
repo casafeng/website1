@@ -1,0 +1,80 @@
+/* Custom Styles & Overrides */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Typography refinement */
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Scroll Reveal Class */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttons */
+.btn-primary {
+    @apply bg-espresso text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-gold shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+    @apply bg-white text-espresso border border-espresso/10 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:border-gold hover:text-gold hover:bg-white shadow-sm hover:shadow-md;
+}
+
+/* Service Cards */
+.service-card {
+    @apply bg-white p-8 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] hover:-translate-y-1 relative overflow-hidden;
+}
+
+/* Slanted Hero Image */
+.lg\:clip-path-slant {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Details Animation */
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-slideDown {
+    animation: slideDown 0.3s ease-out forwards;
+}
