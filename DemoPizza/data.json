@@ -1,0 +1,38 @@
+{
+  "brand": {
+    "name": "Cirispaccio",
+    "positioning": "Napoli verace, rustic-chic contemporaneo",
+    "colors": {
+      "primary": "#C85D44",
+      "secondary": "#FDFBF7",
+      "accent": "#D4AF37"
+    }
+  },
+  "contacts": {
+    "phone": "+39 012 345 6789",
+    "whatsapp": "+390123456789",
+    "address": "Via della Tradizione 12, Napoli"
+  },
+  "menu_highlights": [
+    {
+      "category": "Antipasti",
+      "items": [
+        {"name": "Tagliere Cirispaccio", "price": 18, "desc": "Selezione artigianale"},
+        {"name": "Fritti d'Autore", "price": 9, "desc": "Crocchè e supplì fatti in casa"}
+      ]
+    },
+    {
+      "category": "Pizza",
+      "items": [
+        {"name": "La Cirispaccio", "price": 13, "desc": "Bufala e San Marzano DOP"},
+        {"name": "Sottobosco", "price": 15, "desc": "Provola, porcini e guanciale"}
+      ]
+    }
+  ],
+  "usps": [
+    "Impasto 48h lievitazione",
+    "Ingredienti a KM 0",
+    "Ospitalità Campana",
+    "Ambiente Design"
+  ]
+}

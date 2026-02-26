@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+    --cream: #FDFBF7;
+    --terracotta: #C85D44;
+    --charcoal: #1C1C1C;
+    --olive: #5D6D4D;
+    --brass: #D4AF37;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-cream { background-color: var(--cream); }
+.bg-terracotta { background-color: var(--terracotta); }
+.bg-charcoal { background-color: var(--charcoal); }
+.bg-olive { background-color: var(--olive); }
+.bg-brass { background-color: var(--brass); }
+
+.text-terracotta { color: var(--terracotta); }
+.text-brass { color: var(--brass); }
+.text-olive { color: var(--olive); }
+.text-cream { color: var(--cream); }
+
+/* Custom Animations */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 30s linear infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+}
+
+/* Nav Scrolled State */
+nav.scrolled {
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+nav.scrolled a {
+    color: var(--charcoal);
+}
+
+/* Luxury Interactions */
+.reveal-text {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.faq-content {
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+}
+
+::selection {
+    background: var(--terracotta);
+    color: white;
+}
